@@ -370,6 +370,13 @@
       transform: scale(0.85);
     }
 
+    .machine-visual img.stretched {
+      width: 115%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
     .machine-visual.dpp80 { background: linear-gradient(135deg, #E8F4FD 0%, #D0E8FA 100%); }
     .machine-visual.dpp150 { background: linear-gradient(135deg, #E8FDF4 0%, #D0FAE8 100%); }
     .machine-visual.dpp260 { background: linear-gradient(135deg, #FDE8E8 0%, #FAD0D0 100%); }
@@ -675,7 +682,7 @@
         <!-- DPP-150 -->
         <div class="machine-card reveal">
           <div class="machine-visual dpp150">
-            <img src="imgs/dpp150_1.png" alt="DPP-150 blister packaging machine" />
+            <img src="imgs/dpp150_1.png" alt="DPP-150 blister packaging machine" class="stretched" />
           </div>
           <div class="machine-info">
             <div class="machine-name">DPP-150 <span>Mid-Size Production</span></div>
