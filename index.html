@@ -330,7 +330,7 @@
     .machine-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 16px;
     }
 
     .machine-card {
@@ -339,6 +339,7 @@
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.04);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      min-width: 0;
     }
 
     .machine-card:hover {
@@ -366,6 +367,16 @@
       padding: 8px;
     }
 
+    .hero-video video::-webkit-media-controls {
+      display: flex !important;
+    }
+    .hero-video video::-webkit-media-controls-enclosure {
+      display: none !important;
+    }
+    .hero-video video::-webkit-media-controls-download-button {
+      display: none !important;
+    }
+
     .machine-visual img.stretched {
       width: 115%;
       height: 100%;
@@ -390,20 +401,13 @@
       color: var(--text-secondary);
     }
 
-    .machine-info { padding: 24px; }
+    .machine-info { padding: 20px 16px; }
 
     .machine-name {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       margin-bottom: 4px;
-    }
-
-    .machine-name span {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: var(--text-secondary);
-      margin-top: 2px;
+      white-space: nowrap;
     }
 
     .machine-capacity-tag {
@@ -411,17 +415,17 @@
       font-size: 0.75rem;
       color: var(--accent-blue);
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .machine-specs {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    .spec-item { font-size: 0.75rem; }
+    .spec-item { font-size: 0.7rem; white-space: nowrap; }
     .spec-label { color: var(--text-secondary); }
     .spec-value { font-weight: 600; color: var(--text-primary); }
 
@@ -627,7 +631,7 @@
           </div>
         </div>
         <div class="hero-video">
-          <video autoplay muted loop playsinline controls poster="imgs/dpp320_1.png">
+          <video autoplay muted loop playsinline controls controlsList="nodownload" poster="imgs/dpp320_1.png">
             <source src="imgs/machine_video.mp4" type="video/mp4" />
           </video>
         </div>
