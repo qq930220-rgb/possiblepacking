@@ -366,12 +366,6 @@
       padding: 8px;
     }
 
-    .machine-visual .machine-model,
-    .machine-visual .machine-capacity {
-      position: relative;
-      z-index: 1;
-    }
-
     .machine-visual.dpp80 { background: linear-gradient(135deg, #E8F4FD 0%, #D0E8FA 100%); }
     .machine-visual.dpp150 { background: linear-gradient(135deg, #E8FDF4 0%, #D0FAE8 100%); }
     .machine-visual.dpp260 { background: linear-gradient(135deg, #FDE8E8 0%, #FAD0D0 100%); }
@@ -391,7 +385,27 @@
 
     .machine-info { padding: 24px; }
 
-    .machine-name { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+    .machine-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .machine-name span {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .machine-capacity-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
     .machine-specs {
       display: grid;
@@ -640,11 +654,10 @@
         <div class="machine-card reveal">
           <div class="machine-visual dpp80">
             <img src="imgs/dpp80_1.png" alt="DPP-80 blister packaging machine" />
-            <div class="machine-model">DPP-80</div>
-            <div class="machine-capacity">1,980 plates/hr</div>
           </div>
           <div class="machine-info">
-            <div class="machine-name">Compact Benchtop Model</div>
+            <div class="machine-name">DPP-80 <span>Compact Benchtop</span></div>
+            <div class="machine-capacity-tag">1,980 plates/hr</div>
             <div class="machine-specs">
               <div class="spec-item"><span class="spec-label">Stroke:</span> <span class="spec-value">30-80mm</span></div>
               <div class="spec-item"><span class="spec-label">Forming:</span> <span class="spec-value">105×70mm</span></div>
@@ -659,11 +672,10 @@
         <div class="machine-card reveal">
           <div class="machine-visual dpp150">
             <img src="imgs/dpp150_1.png" alt="DPP-150 blister packaging machine" />
-            <div class="machine-model">DPP-150</div>
-            <div class="machine-capacity">3,000-6,000 plates/hr</div>
           </div>
           <div class="machine-info">
-            <div class="machine-name">Mid-Size Production</div>
+            <div class="machine-name">DPP-150 <span>Mid-Size Production</span></div>
+            <div class="machine-capacity-tag">3,000-6,000 plates/hr</div>
             <div class="machine-specs">
               <div class="spec-item"><span class="spec-label">Stroke:</span> <span class="spec-value">40-120mm</span></div>
               <div class="spec-item"><span class="spec-label">Forming:</span> <span class="spec-value">150×100mm</span></div>
@@ -678,11 +690,10 @@
         <div class="machine-card reveal">
           <div class="machine-visual dpp260">
             <img src="imgs/dpp260_dirty.png" alt="DPP-260 blister packaging machine" />
-            <div class="machine-model">DPP-260</div>
-            <div class="machine-capacity">2,400-9,600 plates/hr</div>
           </div>
           <div class="machine-info">
-            <div class="machine-name">High-Speed Production</div>
+            <div class="machine-name">DPP-260 <span>High-Speed Production</span></div>
+            <div class="machine-capacity-tag">2,400-9,600 plates/hr</div>
             <div class="machine-specs">
               <div class="spec-item"><span class="spec-label">Stroke:</span> <span class="spec-value">40-140mm</span></div>
               <div class="spec-item"><span class="spec-label">Forming:</span> <span class="spec-value">240×140mm</span></div>
@@ -697,11 +708,10 @@
         <div class="machine-card reveal">
           <div class="machine-visual dpp320">
             <img src="imgs/dpp320_1.png" alt="DPP-320 blister packaging machine" />
-            <div class="machine-model">DPP-320</div>
-            <div class="machine-capacity">2,400-9,600 plates/hr</div>
           </div>
           <div class="machine-info">
-            <div class="machine-name">Premium Large Format</div>
+            <div class="machine-name">DPP-320 <span>Premium Large Format</span></div>
+            <div class="machine-capacity-tag">2,400-9,600 plates/hr</div>
             <div class="machine-specs">
               <div class="spec-item"><span class="spec-label">Stroke:</span> <span class="spec-value">40-180mm</span></div>
               <div class="spec-item"><span class="spec-label">Forming:</span> <span class="spec-value">310×160mm</span></div>
