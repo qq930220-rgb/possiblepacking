@@ -354,6 +354,22 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
+      background: white;
+    }
+
+    .machine-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 8px;
+    }
+
+    .machine-visual .machine-model,
+    .machine-visual .machine-capacity {
+      position: relative;
+      z-index: 1;
     }
 
     .machine-visual.dpp80 { background: linear-gradient(135deg, #E8F4FD 0%, #D0E8FA 100%); }
@@ -624,6 +640,7 @@
         <!-- DPP-80 -->
         <div class="machine-card reveal">
           <div class="machine-visual dpp80">
+            <img src="imgs/dpp80_1.png" alt="DPP-80 blister packaging machine" />
             <div class="machine-model">DPP-80</div>
             <div class="machine-capacity">1,980 plates/hr</div>
           </div>
@@ -642,6 +659,7 @@
         <!-- DPP-150 -->
         <div class="machine-card reveal">
           <div class="machine-visual dpp150">
+            <img src="imgs/dpp150_1.png" alt="DPP-150 blister packaging machine" />
             <div class="machine-model">DPP-150</div>
             <div class="machine-capacity">3,000-6,000 plates/hr</div>
           </div>
@@ -660,6 +678,7 @@
         <!-- DPP-260 -->
         <div class="machine-card reveal">
           <div class="machine-visual dpp260">
+            <img src="imgs/dpp260_dirty.png" alt="DPP-260 blister packaging machine" />
             <div class="machine-model">DPP-260</div>
             <div class="machine-capacity">2,400-9,600 plates/hr</div>
           </div>
@@ -678,6 +697,7 @@
         <!-- DPP-320 -->
         <div class="machine-card reveal">
           <div class="machine-visual dpp320">
+            <img src="imgs/dpp320_1.png" alt="DPP-320 blister packaging machine" />
             <div class="machine-model">DPP-320</div>
             <div class="machine-capacity">2,400-9,600 plates/hr</div>
           </div>
