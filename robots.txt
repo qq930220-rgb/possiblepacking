@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://possiblepacking.com/sitemap.xml
+
+# Crawl-delay suggestion (Google ignores this but other bots respect it)
+Crawl-delay: 1
+
+# Block common non-content paths
+Disallow: /api/
+Disallow: /_nuxt/
+Disallow: /cdn/
