@@ -1693,11 +1693,11 @@
       nextBtn.addEventListener('click', function() { goTo((current + 1) % slides.length); });
       dots.forEach(function(d, i) { d.addEventListener('click', function() { goTo(i); }); });
 
-      let autoInterval = setInterval(function() { goTo((current + 1) % slides.length); }, 6000);
+      let autoInterval = setInterval(function() { goTo((current + 1) % slides.length); }, 4000);
       carousel.addEventListener('mouseenter', function() { clearInterval(autoInterval); });
       carousel.addEventListener('mouseleave', function() {
         clearInterval(autoInterval);
-        autoInterval = setInterval(function() { goTo((current + 1) % slides.length); }, 6000);
+        autoInterval = setInterval(function() { goTo((current + 1) % slides.length); }, 4000);
       });
     })();
 
