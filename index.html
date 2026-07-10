@@ -158,18 +158,18 @@
       },
       {
         "@type": "Question",
-        "name": "What capsule sizes does the NJP-200C support?",
+        "name": "What is the production capacity of the NJP-1200D?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The NJP-200C handles capsule sizes 00#, 0#, 1#, 2#, 3#, 4#, and 5#. Change parts are required for different size ranges."
+          "text": "The NJP-1200D produces up to 72,000 capsules per hour with filling accuracy of ±3% for Western powders and ±4% for TCM/herbal extracts. It handles capsule sizes 00# to 5#."
         }
       },
       {
         "@type": "Question",
-        "name": "Can the NJP-200C fill powders with poor flowability like herbal extracts?",
+        "name": "What is the difference between NJP-1200D and CGN-208D?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The NJP-200C uses a disc-valve feeding system with vibration assist, specifically designed for poor-flow powders including TCM (Traditional Chinese Medicine) and herbal extracts."
+          "text": "NJP-1200D is fully automatic (72,000 caps/hr, 5.5 kW, 380/220V) with Siemens PLC, sealed rotary table, and Becker vacuum pump. CGN-208D is semi-automatic (30,000 caps/hr, 2.12 kW, 220V) with Siemens PLC and three-station independent design, ideal for entry-level or lower-volume production."
         }
       }
     ]
@@ -215,9 +215,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "NJP-200C Automatic Capsule Filling Machine",
-    "description": "12,000 capsules/hour automatic capsule filling machine. Disc-valve feeding with vibration assist. Negative-pressure powder recovery. 316L stainless steel contact parts. cGMP compliant. Capsule sizes 00#-5#.",
-    "image": "https://cdn.hailuoai.com/mcp/u457520486049386502/general/1780649010_496ef862.jpg",
+    "name": "NJP-1200D Automatic Capsule Filling Machine",
+    "description": "72,000 capsules/hour automatic capsule filling machine. Siemens PLC + HMI control. Becker dry vacuum pump. Sealed maintenance-free rotary table (3-year warranty). Negative-pressure powder recovery. 316L stainless steel contact parts. cGMP compliant. Capsule sizes 00#-5#.",
+    "image": "https://possiblepacking.com/imgs/capsule/njp1200d_main.png",
     "brand": { "@type": "Brand", "name": "Possible Packing" },
     "manufacturer": {
       "@type": "Organization",
@@ -668,6 +668,40 @@
       border-radius: 24px;
       border: 1px solid var(--border);
     }
+
+    /* ===== CAROUSEL ===== */
+    .capsule-carousel { position: relative; overflow: hidden; border-radius: 24px; margin-bottom: 0; }
+    .capsule-carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+    .capsule-carousel-slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 56px;
+      background: linear-gradient(135deg, #F4F8FB 0%, #FFFFFF 100%);
+      border: 1px solid var(--border);
+    }
+    .capsule-carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 20px; margin-bottom: 80px; }
+    .capsule-carousel-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--border); cursor: pointer;
+      transition: all 0.3s ease; border: none; padding: 0;
+    }
+    .capsule-carousel-dot.active { background: var(--accent-blue); transform: scale(1.3); }
+    .capsule-carousel-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: white; border: 1px solid var(--border);
+      cursor: pointer; z-index: 10; font-size: 1.3rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: all 0.3s ease; color: var(--text-secondary);
+    }
+    .capsule-carousel-arrow:hover { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
+    .capsule-carousel-arrow.prev { left: 16px; }
+    .capsule-carousel-arrow.next { right: 16px; }
+
     .capsule-featured-visual {
       position: relative;
       aspect-ratio: 4/5;
@@ -974,7 +1008,7 @@
     @media (max-width: 1024px) {
       .machine-grid, .materials-grid { grid-template-columns: repeat(2, 1fr); }
       .capsule-grid { grid-template-columns: repeat(2, 1fr); }
-      .capsule-featured { grid-template-columns: 1fr; gap: 40px; padding: 40px; }
+      .capsule-featured, .capsule-carousel-slide { grid-template-columns: 1fr; gap: 40px; padding: 40px; }
       .capsule-specs, .capsule-features { grid-template-columns: 1fr; }
       .hero-grid, .featured-grid, .quote-grid { grid-template-columns: 1fr; gap: 48px; }
       .nav-links { display: none; }
@@ -1135,95 +1169,194 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-label">Capsule Filling Machines</div>
-        <h2 class="section-title">Precision Powder Encapsulation</h2>
-        <p class="section-desc">NJP-series automatic capsule filling machines for pharmaceutical, nutraceutical, and herbal applications. GMP-compliant with proven Siemens control systems.</p>
+        <h2 class="section-title">Automatic &amp; Semi-Automatic Solutions</h2>
+        <p class="section-desc">From semi-automatic entry-level to high-speed fully automatic — complete capsule filling solutions for every production scale. GMP-compliant with proven Siemens control systems.</p>
       </div>
 
-      <!-- Featured: NJP-200C -->
-      <div class="capsule-featured reveal">
-        <div class="capsule-featured-visual">
-          <img src="https://cdn.hailuoai.com/mcp/u457520486049386502/general/1780649010_496ef862.jpg" alt="NJP-200C Automatic Capsule Filling Machine" />
+      <!-- Featured Carousel: NJP-1200D & CGN-208D -->
+      <div class="capsule-carousel reveal">
+        <div class="capsule-carousel-track">
+          <!-- Slide 1: NJP-1200D -->
+          <div class="capsule-carousel-slide">
+            <div class="capsule-featured-visual">
+              <img src="imgs/capsule/njp1200d_main.png" alt="NJP-1200D Automatic Capsule Filling Machine" />
+            </div>
+            <div class="capsule-featured-info">
+              <div class="capsule-tag">Fully Automatic</div>
+              <h3 class="capsule-name">NJP-1200D <span>Automatic Capsule Filling Machine</span></h3>
+              <p class="capsule-sub">72,000 capsules/hour · 00# – 5# capsule sizes · GMP compliant</p>
+
+              <div class="capsule-specs">
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Max Capacity</span>
+                  <span class="capsule-spec-value">72,000 pcs/hour</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Capsule Sizes</span>
+                  <span class="capsule-spec-value">00# – 5#</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Filling Accuracy</span>
+                  <span class="capsule-spec-value">±3% (Western) · ±4% (TCM)</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Machine Weight</span>
+                  <span class="capsule-spec-value">1,100 kg</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Dimensions</span>
+                  <span class="capsule-spec-value">1,180 × 1,000 × 2,140 mm</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Total Power</span>
+                  <span class="capsule-spec-value">5.5 kW</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Power Supply</span>
+                  <span class="capsule-spec-value">380/220V 50Hz</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Compressed Air</span>
+                  <span class="capsule-spec-value">5 m³/h @ 0.3–0.4 MPa</span>
+                </div>
+              </div>
+
+              <div class="capsule-features">
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🖥️</span>
+                  <div>
+                    <strong>Siemens PLC + HMI</strong>
+                    <p>S7-200 PLC + SMART 1000IE touchscreen for precise, reliable control and real-time monitoring.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🔧</span>
+                  <div>
+                    <strong>Sealed Rotary Table (Patented)</strong>
+                    <p>Maintenance-free design — no oiling, cleaning, or powder removal needed for 3 years.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">💨</span>
+                  <div>
+                    <strong>Becker Dry Vacuum Pump</strong>
+                    <p>Oil-free, water-free — meets FTA pharmaceutical air standards. No heat buildup, no vacuum decay.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🧲</span>
+                  <div>
+                    <strong>Negative-Pressure Powder Recovery</strong>
+                    <p>Built-in powder collector recycles residue — zero cross-contamination, supports reuse.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="capsule-controls">
+                <span class="capsule-control-tag">Siemens PLC</span>
+                <span class="capsule-control-tag">Becker Vacuum</span>
+                <span class="capsule-control-tag">316L Stainless</span>
+                <span class="capsule-control-tag">cGMP</span>
+              </div>
+
+              <a href="#quote" class="btn-primary">Get Quote →</a>
+            </div>
+          </div>
+
+          <!-- Slide 2: CGN-208D -->
+          <div class="capsule-carousel-slide">
+            <div class="capsule-featured-visual">
+              <img src="imgs/capsule/cgn208d_main.png" alt="CGN-208D Semi-Automatic Capsule Filling Machine" />
+            </div>
+            <div class="capsule-featured-info">
+              <div class="capsule-tag" style="background:#E67E22;">Semi-Automatic</div>
+              <h3 class="capsule-name">CGN-208D <span>Semi-Automatic Capsule Filling Machine</span></h3>
+              <p class="capsule-sub">30,000 capsules/hour · 00# – 5# capsule sizes · Cost-effective entry-level</p>
+
+              <div class="capsule-specs">
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Max Capacity</span>
+                  <span class="capsule-spec-value">30,000 pcs/hour</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Capsule Sizes</span>
+                  <span class="capsule-spec-value">00# – 5#</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Filling Accuracy</span>
+                  <span class="capsule-spec-value">±3%</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Machine Weight</span>
+                  <span class="capsule-spec-value">400 kg</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Dimensions</span>
+                  <span class="capsule-spec-value">1,300 × 800 × 1,750 mm</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Total Power</span>
+                  <span class="capsule-spec-value">2.12 kW</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Power Supply</span>
+                  <span class="capsule-spec-value">220V 50Hz</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Operation</span>
+                  <span class="capsule-spec-value">Semi-automatic</span>
+                </div>
+              </div>
+
+              <div class="capsule-features">
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🖥️</span>
+                  <div>
+                    <strong>Siemens PLC + Touchscreen</strong>
+                    <p>CPU SR20 + SMART LINE HMI with variable frequency speed control for smooth operation.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">⚙️</span>
+                  <div>
+                    <strong>3-Station Independent Design</strong>
+                    <p>Separation → filling → locking run independently. Electro-mechanical + pneumatic interlock.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🔒</span>
+                  <div>
+                    <strong>Pneumatic Locking Mechanism</strong>
+                    <p>Cylinder-driven horizontal capsule locking reduces labor and minimizes powder leakage.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🛡️</span>
+                  <div>
+                    <strong>Auto Separation + Safety</strong>
+                    <p>Automatic capsule separation with sensor protection and emergency stop for operator safety.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="capsule-controls">
+                <span class="capsule-control-tag">Siemens PLC</span>
+                <span class="capsule-control-tag">Vacuum Pump</span>
+                <span class="capsule-control-tag">220V</span>
+                <span class="capsule-control-tag">GMP</span>
+              </div>
+
+              <a href="#quote" class="btn-primary">Get Quote →</a>
+            </div>
+          </div>
         </div>
-        <div class="capsule-featured-info">
-          <div class="capsule-tag">Featured Model</div>
-          <h3 class="capsule-name">NJP-200C <span>Automatic Capsule Filling Machine</span></h3>
-          <p class="capsule-sub">12,000 capsules/hour · 00# – 5# capsule sizes · GMP compliant</p>
 
-          <div class="capsule-specs">
-            <div class="capsule-spec-row">
-              <span class="capsule-spec-label">Max Capacity</span>
-              <span class="capsule-spec-value">12,000 pcs/hour</span>
-            </div>
-            <div class="capsule-spec-row">
-              <span class="capsule-spec-label">Capsule Sizes</span>
-              <span class="capsule-spec-value">00# – 5#</span>
-            </div>
-            <div class="capsule-spec-row">
-              <span class="capsule-spec-label">Filling Accuracy</span>
-              <span class="capsule-spec-value">±3% (Western) · ±4% (TCM)</span>
-            </div>
-            <div class="capsule-spec-row">
-              <span class="capsule-spec-label">Machine Weight</span>
-              <span class="capsule-spec-value">600 kg</span>
-            </div>
-            <div class="capsule-spec-row">
-              <span class="capsule-spec-label">Dimensions</span>
-              <span class="capsule-spec-value">980 × 710 × 1880 mm</span>
-            </div>
-            <div class="capsule-spec-row">
-              <span class="capsule-spec-label">Total Power</span>
-              <span class="capsule-spec-value">3 kW</span>
-            </div>
-            <div class="capsule-spec-row">
-              <span class="capsule-spec-label">Power Supply</span>
-              <span class="capsule-spec-value">380/220V 50Hz</span>
-            </div>
-            <div class="capsule-spec-row">
-              <span class="capsule-spec-label">Compressed Air</span>
-              <span class="capsule-spec-value">4 m³/h @ 0.3–0.4 MPa</span>
-            </div>
-          </div>
-
-          <div class="capsule-features">
-            <div class="capsule-feature">
-              <span class="capsule-feature-icon">⚙️</span>
-              <div>
-                <strong>Disc-Valve Feeding</strong>
-                <p>With vibration assist — handles sticky & poor-flow powders (TCM, herbal extracts).</p>
-              </div>
-            </div>
-            <div class="capsule-feature">
-              <span class="capsule-feature-icon">🧲</span>
-              <div>
-                <strong>Negative-Pressure Powder Recovery</strong>
-                <p>Recovers residual powder for re-use — minimizes waste, no cross-contamination.</p>
-              </div>
-            </div>
-            <div class="capsule-feature">
-              <span class="capsule-feature-icon">🔄</span>
-              <div>
-                <strong>Modular Dosing (Patented)</strong>
-                <p>Replace dosing rods without stopping the machine. Adjust capacity on-the-fly.</p>
-              </div>
-            </div>
-            <div class="capsule-feature">
-              <span class="capsule-feature-icon">🛡️</span>
-              <div>
-                <strong>316L Stainless Contact Parts</strong>
-                <p>Full cGMP compliance. Maintenance-free sealed rotary table (3-year warranty).</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="capsule-controls">
-            <span class="capsule-control-tag">Siemens PLC</span>
-            <span class="capsule-control-tag">Schneider Drives</span>
-            <span class="capsule-control-tag">IKO Bearings</span>
-            <span class="capsule-control-tag">cGMP</span>
-          </div>
-
-          <a href="#quote" class="btn-primary">Get Quote →</a>
-        </div>
+        <button class="capsule-carousel-arrow prev" aria-label="Previous">‹</button>
+        <button class="capsule-carousel-arrow next" aria-label="Next">›</button>
+      </div>
+      <div class="capsule-carousel-dots">
+        <button class="capsule-carousel-dot active" aria-label="Slide 1"></button>
+        <button class="capsule-carousel-dot" aria-label="Slide 2"></button>
       </div>
 
       <!-- NJP Series Models -->
@@ -1535,6 +1668,35 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
+
+    /* ===== Capsule Carousel ===== */
+    (function() {
+      const track = document.querySelector('.capsule-carousel-track');
+      if (!track) return;
+      const slides = document.querySelectorAll('.capsule-carousel-slide');
+      const dots = document.querySelectorAll('.capsule-carousel-dot');
+      const prevBtn = document.querySelector('.capsule-carousel-arrow.prev');
+      const nextBtn = document.querySelector('.capsule-carousel-arrow.next');
+      const carousel = document.querySelector('.capsule-carousel');
+      let current = 0;
+
+      function goTo(idx) {
+        current = idx;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+      }
+
+      prevBtn.addEventListener('click', function() { goTo((current - 1 + slides.length) % slides.length); });
+      nextBtn.addEventListener('click', function() { goTo((current + 1) % slides.length); });
+      dots.forEach(function(d, i) { d.addEventListener('click', function() { goTo(i); }); });
+
+      let autoInterval = setInterval(function() { goTo((current + 1) % slides.length); }, 6000);
+      carousel.addEventListener('mouseenter', function() { clearInterval(autoInterval); });
+      carousel.addEventListener('mouseleave', function() {
+        clearInterval(autoInterval);
+        autoInterval = setInterval(function() { goTo((current + 1) % slides.length); }, 6000);
+      });
+    })();
 
     function handleSubmit(e) {
       e.preventDefault();
