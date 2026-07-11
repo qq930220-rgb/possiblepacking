@@ -1069,6 +1069,78 @@
       .footer-brand { grid-column: 1 / -1; }
       .form-row { grid-template-columns: 1fr; }
     }
+    /* ===== Custom Dropdown for Machine Model ===== */
+    .custom-dropdown { position: relative; width: 100%; font-family: inherit; }
+    .custom-dropdown-trigger {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      color: white;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.3s ease;
+    }
+    .custom-dropdown-trigger:focus { outline: none; border-color: var(--accent-blue); }
+    .custom-dropdown-trigger .arrow { font-size: 0.6rem; margin-left: 8px; transition: transform 0.2s ease; flex-shrink: 0; }
+    .custom-dropdown.open .custom-dropdown-trigger .arrow { transform: rotate(180deg); }
+    .custom-dropdown-trigger .placeholder { color: rgba(255,255,255,0.35); }
+    .custom-dropdown-panel {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      background: var(--bg-dark);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      z-index: 1001;
+      max-height: 420px;
+      overflow-y: auto;
+      display: none;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    .custom-dropdown.open .custom-dropdown-panel { display: block; }
+    .custom-dropdown-group-label {
+      padding: 10px 16px 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .custom-dropdown-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      padding: 2px 8px 10px;
+    }
+    .custom-dropdown-option {
+      padding: 8px 10px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.8);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .custom-dropdown-option:hover {
+      background: rgba(0,102,204,0.25);
+      color: white;
+    }
+    .custom-dropdown-option.selected {
+      background: var(--accent-blue);
+      color: white;
+    }
+    .custom-dropdown-panel::-webkit-scrollbar { width: 6px; }
+    .custom-dropdown-panel::-webkit-scrollbar-track { background: transparent; }
+    .custom-dropdown-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
   </style>
 </head>
 <body>
@@ -1688,30 +1760,39 @@
             </div>
             <div class="form-group">
               <label for="product">Machine Model</label>
-              <select id="product" name="product">
-                <option value="">Select model...</option>
-                <optgroup label="Blister Packing Machines">
-                  <option value="DPP-80">DPP-80</option>
-                  <option value="DPP-150">DPP-150</option>
-                  <option value="DPP-260">DPP-260</option>
-                  <option value="DPP-320">DPP-320</option>
-                </optgroup>
-                <optgroup label="Capsule Filling Machines">
-                  <option value="CGNT-209">CGNT-209 (Semi-Auto)</option>
-                  <option value="NJP-1200D">NJP-1200D (Auto)</option>
-                  <option value="NJP-200">NJP-200</option>
-                  <option value="NJP-400">NJP-400</option>
-                  <option value="NJP-800">NJP-800</option>
-                  <option value="NJP-1200">NJP-1200</option>
-                  <option value="NJP-2500">NJP-2500</option>
-                  <option value="NJP-3800">NJP-3800</option>
-                  <option value="NJP-5500">NJP-5500</option>
-                  <option value="NJP-7800">NJP-7800</option>
-                </optgroup>
-                <optgroup label="Other">
-                  <option value="Materials">Materials Only</option>
-                </optgroup>
-              </select>
+              <input type="hidden" id="product" name="product" value="">
+              <div class="custom-dropdown" id="modelDropdown">
+                <div class="custom-dropdown-trigger" tabindex="0" role="button" aria-haspopup="listbox">
+                  <span class="placeholder">Select model...</span>
+                  <span class="arrow">▼</span>
+                </div>
+                <div class="custom-dropdown-panel" role="listbox">
+                  <div class="custom-dropdown-group-label">Blister Packing Machines</div>
+                  <div class="custom-dropdown-grid" data-group="blister">
+                    <div class="custom-dropdown-option" role="option" data-value="DPP-80">DPP-80</div>
+                    <div class="custom-dropdown-option" role="option" data-value="DPP-150">DPP-150</div>
+                    <div class="custom-dropdown-option" role="option" data-value="DPP-260">DPP-260</div>
+                    <div class="custom-dropdown-option" role="option" data-value="DPP-320">DPP-320</div>
+                  </div>
+                  <div class="custom-dropdown-group-label">Capsule Filling Machines</div>
+                  <div class="custom-dropdown-grid" data-group="capsule">
+                    <div class="custom-dropdown-option" role="option" data-value="CGNT-209">CGNT-209 (Semi-Auto)</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-1200D">NJP-1200D (Auto)</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-200">NJP-200</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-400">NJP-400</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-800">NJP-800</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-1200">NJP-1200</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-2500">NJP-2500</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-3800">NJP-3800</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-5500">NJP-5500</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NJP-7800">NJP-7800</div>
+                  </div>
+                  <div class="custom-dropdown-group-label">Other</div>
+                  <div class="custom-dropdown-grid" data-group="other">
+                    <div class="custom-dropdown-option" role="option" data-value="Materials">Materials Only</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="form-group">
               <label for="message">Requirements</label>
@@ -1824,6 +1905,53 @@
         `;
       }, 1000);
     }
+    /* ===== Custom Dropdown Logic ===== */
+    (function() {
+      var dropdown = document.getElementById('modelDropdown');
+      if (!dropdown) return;
+      var trigger = dropdown.querySelector('.custom-dropdown-trigger');
+      var panel = dropdown.querySelector('.custom-dropdown-panel');
+      var hiddenInput = document.getElementById('product');
+      var placeholder = trigger.querySelector('.placeholder');
+      var options = dropdown.querySelectorAll('.custom-dropdown-option');
+
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+
+      options.forEach(function(opt) {
+        opt.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var value = this.getAttribute('data-value');
+          var text = this.textContent;
+          hiddenInput.value = value;
+          placeholder.textContent = text;
+          placeholder.classList.remove('placeholder');
+          options.forEach(function(o) { o.classList.remove('selected'); });
+          this.classList.add('selected');
+          dropdown.classList.remove('open');
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
+
+      trigger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
+        if (e.key === 'Escape') {
+          dropdown.classList.remove('open');
+          trigger.focus();
+        }
+      });
+    })();
+
   </script>
 </body>
 </html>
