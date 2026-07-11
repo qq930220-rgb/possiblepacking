@@ -1050,89 +1050,93 @@
     .footer-contact p { color: rgba(255,255,255,0.5); font-size: 0.875rem; margin-bottom: 8px; }
 
     /* NYF Model Description Cards */
-    .nyf-desc-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    /* NYF Independent Section Blocks */
+    .nyf-section-block {
+      margin-bottom: 72px;
+    }
+    .nyf-section-block:last-of-type {
       margin-bottom: 48px;
     }
-    .nyf-desc-card {
-      background: var(--bg-dark);
-      border-radius: 16px;
-      padding: 32px 24px;
-      color: white;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .nyf-section-titlebar {
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--accent-blue);
     }
-    .nyf-desc-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-    }
-    .nyf-desc-card .nyf-model-name {
+    .nyf-section-titlebar .nyf-model-name {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.75rem;
+      font-size: 2rem;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .nyf-section-titlebar .nyf-model-sub {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .nyf-section-content {
+      background: var(--bg-dark);
+      border-radius: 20px;
+      padding: 36px;
       color: white;
-      margin-bottom: 4px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
     }
-    .nyf-desc-card .nyf-model-sub {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 20px;
-    }
-    .nyf-desc-card .nyf-spec-list {
+    .nyf-section-content .nyf-spec-list {
       list-style: none;
-      margin-bottom: 20px;
     }
-    .nyf-desc-card .nyf-spec-list li {
+    .nyf-section-content .nyf-spec-list li {
       display: flex;
       justify-content: space-between;
-      padding: 8px 0;
+      padding: 9px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
-    .nyf-desc-card .nyf-spec-list li:last-child { border-bottom: none; }
-    .nyf-desc-card .nyf-spec-list li span:first-child {
+    .nyf-section-content .nyf-spec-list li:last-child { border-bottom: none; }
+    .nyf-section-content .nyf-spec-list li span:first-child {
       color: rgba(255,255,255,0.5);
     }
-    .nyf-desc-card .nyf-spec-list li span:last-child {
+    .nyf-section-content .nyf-spec-list li span:last-child {
       font-weight: 600;
     }
-    .nyf-desc-card .nyf-highlights {
-      margin-bottom: 20px;
-    }
-    .nyf-desc-card .nyf-highlights h4 {
-      font-size: 0.7rem;
+    .nyf-section-content .nyf-highlights h4 {
+      font-size: 0.75rem;
       font-weight: 600;
       color: rgba(255,255,255,0.4);
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
-    .nyf-desc-card .nyf-highlights ul {
+    .nyf-section-content .nyf-highlights ul {
       list-style: none;
     }
-    .nyf-desc-card .nyf-highlights ul li {
-      font-size: 0.78rem;
+    .nyf-section-content .nyf-highlights ul li {
+      font-size: 0.82rem;
       color: rgba(255,255,255,0.7);
       padding: 3px 0;
       line-height: 1.5;
     }
-    .nyf-desc-card .nyf-highlights ul li::before {
+    .nyf-section-content .nyf-highlights ul li::before {
       content: '▸ ';
       color: var(--accent-blue-light);
     }
-    .nyf-desc-card .nyf-desc-link {
+    .nyf-section-content .nyf-desc-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       color: var(--accent-blue-light);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 600;
       transition: gap 0.3s ease;
+      grid-column: 1 / -1;
+      margin-top: 12px;
     }
-    .nyf-desc-card .nyf-desc-link:hover { gap: 10px; }
+    .nyf-section-content .nyf-desc-link:hover { gap: 10px; }
     @media (max-width: 1024px) {
-      .nyf-desc-grid { grid-template-columns: 1fr; }
+      .nyf-section-content {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* REVEAL */
@@ -1384,11 +1388,13 @@
         </div>
       </div>
 
-      <!-- NYF Series Description Cards -->
-      <div class="nyf-desc-grid reveal">
-        <div class="nyf-desc-card">
+      <!-- NYF-300 -->
+      <div class="nyf-section-block reveal">
+        <div class="nyf-section-titlebar">
           <div class="nyf-model-name">NYF-300</div>
           <div class="nyf-model-sub">Liquid Filling &amp; Sealing Line</div>
+        </div>
+        <div class="nyf-section-content">
           <ul class="nyf-spec-list">
             <li><span>Capacity</span><span>18,000 pcs/h</span></li>
             <li><span>Mold Holes</span><span>6 holes</span></li>
@@ -1409,9 +1415,15 @@
           </div>
           <a href="#nyf-300" class="nyf-desc-link">View Details →</a>
         </div>
-        <div class="nyf-desc-card">
+      </div>
+
+      <!-- NYF-500 -->
+      <div class="nyf-section-block reveal">
+        <div class="nyf-section-titlebar">
           <div class="nyf-model-name">NYF-500</div>
           <div class="nyf-model-sub">Liquid Filling &amp; Sealing Line</div>
+        </div>
+        <div class="nyf-section-content">
           <ul class="nyf-spec-list">
             <li><span>Capacity</span><span>30,000 pcs/h</span></li>
             <li><span>Mold Holes</span><span>8 holes</span></li>
@@ -1432,9 +1444,15 @@
           </div>
           <a href="#nyf-500" class="nyf-desc-link">View Details →</a>
         </div>
-        <div class="nyf-desc-card">
+      </div>
+
+      <!-- NYF-1000 -->
+      <div class="nyf-section-block reveal">
+        <div class="nyf-section-titlebar">
           <div class="nyf-model-name">NYF-1000</div>
           <div class="nyf-model-sub">Liquid Filling &amp; Sealing Line</div>
+        </div>
+        <div class="nyf-section-content">
           <ul class="nyf-spec-list">
             <li><span>Capacity</span><span>60,000 pcs/h</span></li>
             <li><span>Mold Holes</span><span>16 holes</span></li>
