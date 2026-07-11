@@ -1047,6 +1047,92 @@
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.3); font-size: 0.8rem; }
     .footer-contact p { color: rgba(255,255,255,0.5); font-size: 0.875rem; margin-bottom: 8px; }
 
+    /* NYF Model Description Cards */
+    .nyf-desc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .nyf-desc-card {
+      background: var(--bg-dark);
+      border-radius: 16px;
+      padding: 32px 24px;
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .nyf-desc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    }
+    .nyf-desc-card .nyf-model-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.75rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .nyf-desc-card .nyf-model-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+    .nyf-desc-card .nyf-spec-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .nyf-desc-card .nyf-spec-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.8rem;
+    }
+    .nyf-desc-card .nyf-spec-list li:last-child { border-bottom: none; }
+    .nyf-desc-card .nyf-spec-list li span:first-child {
+      color: rgba(255,255,255,0.5);
+    }
+    .nyf-desc-card .nyf-spec-list li span:last-child {
+      font-weight: 600;
+    }
+    .nyf-desc-card .nyf-highlights {
+      margin-bottom: 20px;
+    }
+    .nyf-desc-card .nyf-highlights h4 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .nyf-desc-card .nyf-highlights ul {
+      list-style: none;
+    }
+    .nyf-desc-card .nyf-highlights ul li {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      padding: 3px 0;
+      line-height: 1.5;
+    }
+    .nyf-desc-card .nyf-highlights ul li::before {
+      content: '▸ ';
+      color: var(--accent-blue-light);
+    }
+    .nyf-desc-card .nyf-desc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-blue-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: gap 0.3s ease;
+    }
+    .nyf-desc-card .nyf-desc-link:hover { gap: 10px; }
+    @media (max-width: 1024px) {
+      .nyf-desc-grid { grid-template-columns: 1fr; }
+    }
+
     /* REVEAL */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -1291,6 +1377,79 @@
         <div class="section-label">Capsule Filling Machines</div>
         <h2 class="section-title">Automatic &amp; Semi-Automatic Solutions</h2>
         <p class="section-desc">From semi-automatic entry-level to high-speed fully automatic — complete capsule filling solutions for every production scale. GMP-compliant with proven Siemens control systems.</p>
+      </div>
+
+      <!-- NYF Series Description Cards -->
+      <div class="nyf-desc-grid reveal">
+        <div class="nyf-desc-card">
+          <div class="nyf-model-name">NYF-300</div>
+          <div class="nyf-model-sub">Liquid Filling &amp; Sealing Line</div>
+          <ul class="nyf-spec-list">
+            <li><span>Capacity</span><span>18,000 pcs/h</span></li>
+            <li><span>Mold Holes</span><span>6 holes</span></li>
+            <li><span>Capsule Size</span><span>00 – 4#</span></li>
+            <li><span>Accuracy</span><span>±2%</span></li>
+            <li><span>Dimensions</span><span>3800×900×1900mm</span></li>
+            <li><span>Power</span><span>9 kW</span></li>
+            <li><span>Weight</span><span>2,300 kg</span></li>
+          </ul>
+          <div class="nyf-highlights">
+            <h4>Key Highlights</h4>
+            <ul>
+              <li>HMI Control</li>
+              <li>10-Station Rotary</li>
+              <li>Double Rubber Seal</li>
+              <li>Vacuum Feed &gt;99%</li>
+            </ul>
+          </div>
+          <a href="#nyf-300" class="nyf-desc-link">View Details →</a>
+        </div>
+        <div class="nyf-desc-card">
+          <div class="nyf-model-name">NYF-500</div>
+          <div class="nyf-model-sub">Liquid Filling &amp; Sealing Line</div>
+          <ul class="nyf-spec-list">
+            <li><span>Capacity</span><span>30,000 pcs/h</span></li>
+            <li><span>Mold Holes</span><span>8 holes</span></li>
+            <li><span>Capsule Size</span><span>00 – 4#</span></li>
+            <li><span>Accuracy</span><span>±2%</span></li>
+            <li><span>Dimensions</span><span>3710×1180×2050mm</span></li>
+            <li><span>Power</span><span>12 kW</span></li>
+            <li><span>Weight</span><span>2,500 kg</span></li>
+          </ul>
+          <div class="nyf-highlights">
+            <h4>Key Highlights</h4>
+            <ul>
+              <li>Schneider PLC</li>
+              <li>10-Station Patented Turntable</li>
+              <li>32-Channel Fiber Detection</li>
+              <li>Double Rubber Seal</li>
+            </ul>
+          </div>
+          <a href="#nyf-500" class="nyf-desc-link">View Details →</a>
+        </div>
+        <div class="nyf-desc-card">
+          <div class="nyf-model-name">NYF-1000</div>
+          <div class="nyf-model-sub">Liquid Filling &amp; Sealing Line</div>
+          <ul class="nyf-spec-list">
+            <li><span>Capacity</span><span>60,000 pcs/h</span></li>
+            <li><span>Mold Holes</span><span>16 holes</span></li>
+            <li><span>Capsule Size</span><span>00 – 4#</span></li>
+            <li><span>Accuracy</span><span>±2%</span></li>
+            <li><span>Dimensions</span><span>4100×1300×2150mm</span></li>
+            <li><span>Power</span><span>12 kW</span></li>
+            <li><span>Weight</span><span>3,000 kg</span></li>
+          </ul>
+          <div class="nyf-highlights">
+            <h4>Key Highlights</h4>
+            <ul>
+              <li>Schneider PLC</li>
+              <li>12-Station Patented Turntable</li>
+              <li>32-Channel Fiber Detection</li>
+              <li>Double Rubber Seal</li>
+            </ul>
+          </div>
+          <a href="#nyf-1000" class="nyf-desc-link">View Details →</a>
+        </div>
       </div>
 
       <!-- Featured Carousel: CGNT-209 & NJP-1200D -->
@@ -1557,6 +1716,182 @@
               <a href="#nyf-300" class="btn-primary">Get Quote →</a>
             </div>
           </div>
+
+          <!-- Slide 4: NYF-500 -->
+          <div class="capsule-carousel-slide">
+            <div class="capsule-featured-visual">
+              <img src="imgs/nyf-300.jpg" alt="NYF-500 Automatic Liquid Filling &amp; Sealing Line" />
+            </div>
+            <div class="capsule-featured-info">
+              <div class="capsule-tag" style="background:#27AE60;">Liquid Fill · 10-Station Patented</div>
+              <h3 class="capsule-name">NYF-500 <span>Automatic Liquid Filling &amp; Sealing Line</span></h3>
+              <p class="capsule-sub">30,000 capsules/hour · 00# – 4# capsule sizes · Schneider PLC</p>
+
+              <div class="capsule-specs">
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Max Capacity</span>
+                  <span class="capsule-spec-value">30,000 pcs/hour</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Capsule Sizes</span>
+                  <span class="capsule-spec-value">00# – 4#</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Mold Holes</span>
+                  <span class="capsule-spec-value">8</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Filling Accuracy</span>
+                  <span class="capsule-spec-value">±2%</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Dimensions</span>
+                  <span class="capsule-spec-value">3,710 × 1,180 × 2,050 mm</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Total Power</span>
+                  <span class="capsule-spec-value">12 kW</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Machine Weight</span>
+                  <span class="capsule-spec-value">2,500 kg</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Control</span>
+                  <span class="capsule-spec-value">Schneider PLC</span>
+                </div>
+              </div>
+
+              <div class="capsule-features">
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🖥️</span>
+                  <div>
+                    <strong>Schneider PLC Control</strong>
+                    <p>Advanced Schneider PLC system with intuitive HMI for precise liquid filling parameter adjustment and real-time monitoring.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">💧</span>
+                  <div>
+                    <strong>Ceramic Pump ±2% Accuracy</strong>
+                    <p>High-precision ceramic rotary piston pump with ±2% filling accuracy, ideal for viscous liquids and suspensions.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🔄</span>
+                  <div>
+                    <strong>10-Station Patented Turntable</strong>
+                    <p>Patented 10-station rotary design for continuous capsule orientation, separation, filling, and sealing in one smooth cycle.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🔍</span>
+                  <div>
+                    <strong>32-Channel Fiber Detection</strong>
+                    <p>32-channel fiber optic system detects unfilled or improperly separated capsules for 100% quality assurance.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="capsule-controls">
+                <span class="capsule-control-tag">Schneider PLC</span>
+                <span class="capsule-control-tag">Ceramic Pump ±2%</span>
+                <span class="capsule-control-tag">Patented Turntable</span>
+                <span class="capsule-control-tag">32-Channel Detection</span>
+                <span class="capsule-control-tag">Double Rubber Seal</span>
+              </div>
+
+              <a href="#nyf-500" class="btn-primary">Get Quote →</a>
+            </div>
+          </div>
+
+          <!-- Slide 5: NYF-1000 -->
+          <div class="capsule-carousel-slide">
+            <div class="capsule-featured-visual">
+              <img src="imgs/nyf-300.jpg" alt="NYF-1000 Automatic Liquid Filling &amp; Sealing Line" />
+            </div>
+            <div class="capsule-featured-info">
+              <div class="capsule-tag" style="background:#27AE60;">Liquid Fill · 12-Station Patented</div>
+              <h3 class="capsule-name">NYF-1000 <span>Automatic Liquid Filling &amp; Sealing Line</span></h3>
+              <p class="capsule-sub">60,000 capsules/hour · 00# – 4# capsule sizes · Schneider PLC</p>
+
+              <div class="capsule-specs">
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Max Capacity</span>
+                  <span class="capsule-spec-value">60,000 pcs/hour</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Capsule Sizes</span>
+                  <span class="capsule-spec-value">00# – 4#</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Mold Holes</span>
+                  <span class="capsule-spec-value">16</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Filling Accuracy</span>
+                  <span class="capsule-spec-value">±2%</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Dimensions</span>
+                  <span class="capsule-spec-value">4,100 × 1,300 × 2,150 mm</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Total Power</span>
+                  <span class="capsule-spec-value">12 kW</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Machine Weight</span>
+                  <span class="capsule-spec-value">3,000 kg</span>
+                </div>
+                <div class="capsule-spec-row">
+                  <span class="capsule-spec-label">Control</span>
+                  <span class="capsule-spec-value">Schneider PLC</span>
+                </div>
+              </div>
+
+              <div class="capsule-features">
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🖥️</span>
+                  <div>
+                    <strong>Schneider PLC Control</strong>
+                    <p>Advanced Schneider PLC system with intuitive HMI for precise liquid filling parameter adjustment and real-time monitoring.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">💧</span>
+                  <div>
+                    <strong>Ceramic Pump ±2% Accuracy</strong>
+                    <p>High-precision ceramic rotary piston pump with ±2% filling accuracy, ideal for high-volume liquid production.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🔄</span>
+                  <div>
+                    <strong>12-Station Patented Turntable</strong>
+                    <p>Patented 12-station rotary design for continuous capsule orientation, separation, filling, and sealing with 60K pcs/hr throughput.</p>
+                  </div>
+                </div>
+                <div class="capsule-feature">
+                  <span class="capsule-feature-icon">🔍</span>
+                  <div>
+                    <strong>32-Channel Fiber Detection</strong>
+                    <p>32-channel fiber optic system detects unfilled or improperly separated capsules for 100% quality assurance at high speed.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="capsule-controls">
+                <span class="capsule-control-tag">Schneider PLC</span>
+                <span class="capsule-control-tag">Ceramic Pump ±2%</span>
+                <span class="capsule-control-tag">Patented Turntable</span>
+                <span class="capsule-control-tag">32-Channel Detection</span>
+                <span class="capsule-control-tag">Double Rubber Seal</span>
+              </div>
+
+              <a href="#nyf-1000" class="btn-primary">Get Quote →</a>
+            </div>
+          </div>
         </div>
 
         <button class="capsule-carousel-arrow prev" aria-label="Previous">‹</button>
@@ -1566,6 +1901,8 @@
         <button class="capsule-carousel-dot active" aria-label="Slide 1"></button>
         <button class="capsule-carousel-dot" aria-label="Slide 2"></button>
         <button class="capsule-carousel-dot" aria-label="Slide 3"></button>
+        <button class="capsule-carousel-dot" aria-label="Slide 4"></button>
+        <button class="capsule-carousel-dot" aria-label="Slide 5"></button>
       </div>
 
       <!-- NJP Series Models -->
@@ -1876,6 +2213,8 @@
                     <div class="custom-dropdown-option" role="option" data-value="NJP-5500">NJP-5500</div>
                     <div class="custom-dropdown-option" role="option" data-value="NJP-7800">NJP-7800</div>
                     <div class="custom-dropdown-option" role="option" data-value="NYF-300">NYF-300 (Liquid Fill)</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NYF-500">NYF-500 (Liquid Fill)</div>
+                    <div class="custom-dropdown-option" role="option" data-value="NYF-1000">NYF-1000 (Liquid Fill)</div>
                   </div>
                   <div class="custom-dropdown-group-label">Other</div>
                   <div class="custom-dropdown-grid" data-group="other">
@@ -1927,6 +2266,9 @@
             <li><a href="#capsule">NJP-3800</a></li>
             <li><a href="#capsule">NJP-5500</a></li>
             <li><a href="#capsule">NJP-7800</a></li>
+            <li><a href="#capsule">NYF-300</a></li>
+            <li><a href="#capsule">NYF-500</a></li>
+            <li><a href="#capsule">NYF-1000</a></li>
           </ul>
         </div>
         <div class="footer-col footer-contact">
